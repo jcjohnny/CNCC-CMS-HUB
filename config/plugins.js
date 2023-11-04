@@ -4,6 +4,12 @@ module.exports = {
     enabled: true,
     resolve: "./src/plugins/cn-image-preview",
   },
+  'import-export-entries': {
+    enabled: true,
+    config: {
+      // See `Config` section.
+    },
+  },
   "preview-button": {
     enabled: true,
     config: {
