@@ -23,9 +23,10 @@
     "ratio": {
       "type": "enumeration",
       "enum": [
-        "hello",
-        "goodnight",
-        "sweetdream"
+        "a. 5:4",
+        "b. 4:5",
+        "c. 1:1",
+        "d. NA"
       ]
     }
   }

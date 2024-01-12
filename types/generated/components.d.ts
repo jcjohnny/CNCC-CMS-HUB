@@ -66,6 +66,52 @@ export interface BlocksSwiper extends Schema.Component {
   };
 }
 
+export interface DynamicMediaMediaType extends Schema.Component {
+  collectionName: 'components_dynamic_media_media_types';
+  info: {
+    displayName: 'mediaType';
+  };
+  attributes: {
+    image: Attribute.Component<'dynamic-media.media'>;
+    video: Attribute.Component<'dynamic-media.video'>;
+  };
+}
+
+export interface DynamicMediaMedia extends Schema.Component {
+  collectionName: 'components_dynamic_media_media';
+  info: {
+    displayName: 'image';
+    icon: 'picture';
+    description: '';
+  };
+  attributes: {
+    altText: Attribute.String;
+    copilotURL: Attribute.String &
+      Attribute.CustomField<'plugin::cn-image-preview.image-preview'>;
+    title: Attribute.String;
+    name: Attribute.String;
+    caption: Attribute.String;
+  };
+}
+
+export interface DynamicMediaVideo extends Schema.Component {
+  collectionName: 'components_dynamic_media_videos';
+  info: {
+    displayName: 'video';
+    icon: 'play';
+    description: '';
+  };
+  attributes: {
+    fullCopilotVideo: Attribute.String;
+    clipCopilotVideo: Attribute.String;
+    posterCopilot: Attribute.String &
+      Attribute.CustomField<'plugin::cn-image-preview.image-preview'>;
+    name: Attribute.String;
+    title: Attribute.String;
+    caption: Attribute.String;
+  };
+}
+
 export interface HeaderHeader extends Schema.Component {
   collectionName: 'components_header_headers';
   info: {
@@ -105,7 +151,7 @@ export interface MediaMediaAlt extends Schema.Component {
     image: Attribute.String &
       Attribute.CustomField<'plugin::cn-image-preview.image-preview'>;
     video_alttext: Attribute.String;
-    ratio: Attribute.Enumeration<['hello', 'goodnight', 'sweetdream']>;
+    ratio: Attribute.Enumeration<['a. 5:4', 'b. 4:5', 'c. 1:1', 'd. NA']>;
   };
 }
 
@@ -120,6 +166,7 @@ export interface PhotoVogueGallerySingleAristsInfo extends Schema.Component {
     title: Attribute.String;
     name: Attribute.String;
     media: Attribute.Component<'media.media-alt'>;
+    caption: Attribute.Text;
   };
 }
 
@@ -193,6 +240,9 @@ declare module '@strapi/types' {
       'blocks.product-grid': BlocksProductGrid;
       'blocks.quote': BlocksQuote;
       'blocks.swiper': BlocksSwiper;
+      'dynamic-media.media-type': DynamicMediaMediaType;
+      'dynamic-media.media': DynamicMediaMedia;
+      'dynamic-media.video': DynamicMediaVideo;
       'header.header': HeaderHeader;
       'hero.hero-single': HeroHeroSingle;
       'media.media-alt': MediaMediaAlt;

@@ -22,13 +22,15 @@
       "repeatable": true,
       "component": "hero.hero-single"
     },
-    "artists": {
-      "type": "component",
-      "repeatable": true,
-      "component": "photo-vogue-gallery.single-arists-info"
-    },
     "intro_text": {
       "type": "richtext"
+    },
+    "artists": {
+      "type": "dynamiczone",
+      "components": [
+        "dynamic-media.media",
+        "dynamic-media.video"
+      ]
     }
   }
 }

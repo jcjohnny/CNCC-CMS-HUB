@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_dynamic_media_media",
+  "info": {
+    "displayName": "image",
+    "icon": "picture",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "altText": {
+      "type": "string"
+    },
+    "copilotURL": {
+      "type": "customField",
+      "customField": "plugin::cn-image-preview.image-preview"
+    },
+    "title": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "caption": {
+      "type": "string"
+    }
+  }
+}

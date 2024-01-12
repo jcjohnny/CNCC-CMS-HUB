@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_dynamic_media_media_types",
+  "info": {
+    "displayName": "mediaType"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "displayName": "media",
+      "type": "component",
+      "repeatable": false,
+      "component": "dynamic-media.media"
+    },
+    "video": {
+      "displayName": "video",
+      "type": "component",
+      "repeatable": false,
+      "component": "dynamic-media.video"
+    }
+  }
+}
