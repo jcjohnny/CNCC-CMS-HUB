@@ -7,17 +7,25 @@
   },
   "options": {},
   "attributes": {
-    "mediaURL": {
+    "videoURL": {
       "type": "string"
     },
-    "altText": {
+    "image_altText": {
       "type": "string"
     },
-    "mediaType": {
+    "image": {
+      "type": "customField",
+      "customField": "plugin::cn-image-preview.image-preview"
+    },
+    "video_alttext": {
+      "type": "string"
+    },
+    "ratio": {
       "type": "enumeration",
       "enum": [
-        "video",
-        "image"
+        "hello",
+        "goodnight",
+        "sweetdream"
       ]
     }
   }

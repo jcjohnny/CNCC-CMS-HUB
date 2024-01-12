@@ -713,71 +713,36 @@ export interface ApiArtistArtist extends Schema.CollectionType {
   };
 }
 
-export interface ApiDisneyHmDisneyHm extends Schema.SingleType {
-  collectionName: 'disney_hms';
+export interface ApiPhotoVogueTestPhotoVogueTest extends Schema.SingleType {
+  collectionName: 'photo_vogue_tests';
   info: {
-    singularName: 'disney-hm';
-    pluralName: 'disney-hms';
-    displayName: 'disneyHM';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    head: Attribute.Component<'header.header'>;
-    heroSingle: Attribute.Component<'hero.hero-single'>;
-    product: Attribute.Component<'product.product', true>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::disney-hm.disney-hm',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::disney-hm.disney-hm',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiDynamicBlockDynamicBlock extends Schema.SingleType {
-  collectionName: 'dynamic_blocks';
-  info: {
-    singularName: 'dynamic-block';
-    pluralName: 'dynamic-blocks';
-    displayName: 'Dynamic Block';
+    singularName: 'photo-vogue-test';
+    pluralName: 'photo-vogue-tests';
+    displayName: 'PhotoVogue - Test';
     description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    title: Attribute.String;
-    block_editor: Attribute.DynamicZone<
-      [
-        'blocks.hero-image',
-        'blocks.copy',
-        'blocks.product-grid',
-        'blocks.quote',
-        'blocks.swiper'
-      ]
+    header: Attribute.Component<'header.header'>;
+    animated_hero: Attribute.Component<'hero.hero-single', true>;
+    artists: Attribute.Component<
+      'photo-vogue-gallery.single-arists-info',
+      true
     >;
+    intro_text: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::dynamic-block.dynamic-block',
+      'api::photo-vogue-test.photo-vogue-test',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::dynamic-block.dynamic-block',
+      'api::photo-vogue-test.photo-vogue-test',
       'oneToOne',
       'admin::user'
     > &
@@ -874,8 +839,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::artist.artist': ApiArtistArtist;
-      'api::disney-hm.disney-hm': ApiDisneyHmDisneyHm;
-      'api::dynamic-block.dynamic-block': ApiDynamicBlockDynamicBlock;
+      'api::photo-vogue-test.photo-vogue-test': ApiPhotoVogueTestPhotoVogueTest;
       'api::preview-product.preview-product': ApiPreviewProductPreviewProduct;
       'api::product.product': ApiProductProduct;
     }

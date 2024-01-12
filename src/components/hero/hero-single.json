@@ -1,15 +1,14 @@
 {
   "collectionName": "components_hero_hero_singles",
   "info": {
-    "displayName": "heroSingle"
+    "displayName": "heroSingle",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "mediaAlt": {
-      "displayName": "mediaAlt",
-      "type": "component",
-      "repeatable": true,
-      "component": "media.media-alt"
+    "image": {
+      "type": "customField",
+      "customField": "plugin::cn-image-preview.image-preview"
     }
   }
 }

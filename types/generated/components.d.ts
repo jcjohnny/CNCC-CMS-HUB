@@ -84,9 +84,11 @@ export interface HeroHeroSingle extends Schema.Component {
   collectionName: 'components_hero_hero_singles';
   info: {
     displayName: 'heroSingle';
+    description: '';
   };
   attributes: {
-    mediaAlt: Attribute.Component<'media.media-alt', true>;
+    image: Attribute.String &
+      Attribute.CustomField<'plugin::cn-image-preview.image-preview'>;
   };
 }
 
@@ -98,9 +100,26 @@ export interface MediaMediaAlt extends Schema.Component {
     description: '';
   };
   attributes: {
-    mediaURL: Attribute.String;
-    altText: Attribute.String;
-    mediaType: Attribute.Enumeration<['video', 'image']>;
+    videoURL: Attribute.String;
+    image_altText: Attribute.String;
+    image: Attribute.String &
+      Attribute.CustomField<'plugin::cn-image-preview.image-preview'>;
+    video_alttext: Attribute.String;
+    ratio: Attribute.Enumeration<['hello', 'goodnight', 'sweetdream']>;
+  };
+}
+
+export interface PhotoVogueGallerySingleAristsInfo extends Schema.Component {
+  collectionName: 'components_photo_vogue_gallery_single_arists_infos';
+  info: {
+    displayName: 'singleAristsInfo';
+    icon: 'apps';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    name: Attribute.String;
+    media: Attribute.Component<'media.media-alt'>;
   };
 }
 
@@ -177,6 +196,7 @@ declare module '@strapi/types' {
       'header.header': HeaderHeader;
       'hero.hero-single': HeroHeroSingle;
       'media.media-alt': MediaMediaAlt;
+      'photo-vogue-gallery.single-arists-info': PhotoVogueGallerySingleAristsInfo;
       'product.product-info': ProductProductInfo;
       'product.product': ProductProduct;
       'quote.quote': QuoteQuote;

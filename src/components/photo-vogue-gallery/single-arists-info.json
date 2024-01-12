@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_photo_vogue_gallery_single_arists_infos",
+  "info": {
+    "displayName": "singleAristsInfo",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "media": {
+      "type": "component",
+      "repeatable": false,
+      "component": "media.media-alt"
+    }
+  }
+}
