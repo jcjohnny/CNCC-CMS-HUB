@@ -362,76 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiPhotoVogueTestPhotoVogueTest extends Schema.SingleType {
-  collectionName: 'photo_vogue_tests';
-  info: {
-    singularName: 'photo-vogue-test';
-    pluralName: 'photo-vogue-tests';
-    displayName: 'PhotoVogue - Test';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    header: Attribute.Component<'header.header'>;
-    animated_hero: Attribute.Component<'hero.hero-single', true>;
-    intro_text: Attribute.RichText;
-    artists: Attribute.DynamicZone<
-      ['dynamic-media.media', 'dynamic-media.video']
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::photo-vogue-test.photo-vogue-test',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::photo-vogue-test.photo-vogue-test',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiPreviewProductPreviewProduct extends Schema.CollectionType {
-  collectionName: 'preview_products';
-  info: {
-    singularName: 'preview-product';
-    pluralName: 'preview-products';
-    displayName: 'Preview Product';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    product_name: Attribute.String;
-    product_description: Attribute.RichText;
-    product_image: Attribute.String &
-      Attribute.CustomField<'plugin::cn-image-preview.image-preview'>;
-    product_link: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::preview-product.preview-product',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::preview-product.preview-product',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -747,6 +677,77 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiPhotoVogueTestPhotoVogueTest extends Schema.SingleType {
+  collectionName: 'photo_vogue_tests';
+  info: {
+    singularName: 'photo-vogue-test';
+    pluralName: 'photo-vogue-tests';
+    displayName: 'PhotoVogue - Test';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    header: Attribute.Component<'header.header'>;
+    animated_hero: Attribute.Component<'hero.hero-single', true>;
+    intro_text: Attribute.RichText;
+    artists: Attribute.DynamicZone<
+      ['dynamic-media.media', 'dynamic-media.video']
+    >;
+    authors: Attribute.Component<'blocks.credits', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::photo-vogue-test.photo-vogue-test',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::photo-vogue-test.photo-vogue-test',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPreviewProductPreviewProduct extends Schema.CollectionType {
+  collectionName: 'preview_products';
+  info: {
+    singularName: 'preview-product';
+    pluralName: 'preview-products';
+    displayName: 'Preview Product';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    product_name: Attribute.String;
+    product_description: Attribute.RichText;
+    product_image: Attribute.String &
+      Attribute.CustomField<'plugin::cn-image-preview.image-preview'>;
+    product_link: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::preview-product.preview-product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::preview-product.preview-product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -757,14 +758,14 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::photo-vogue-test.photo-vogue-test': ApiPhotoVogueTestPhotoVogueTest;
-      'api::preview-product.preview-product': ApiPreviewProductPreviewProduct;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::i18n.locale': PluginI18NLocale;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::photo-vogue-test.photo-vogue-test': ApiPhotoVogueTestPhotoVogueTest;
+      'api::preview-product.preview-product': ApiPreviewProductPreviewProduct;
     }
   }
 }

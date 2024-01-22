@@ -22,6 +22,14 @@
     },
     "caption": {
       "type": "string"
+    },
+    "ratio": {
+      "type": "enumeration",
+      "enum": [
+        "a. 5:4",
+        "b. 4:5",
+        "c. 1:1"
+      ]
     }
   }
 }

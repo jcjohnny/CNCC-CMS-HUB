@@ -11,6 +11,17 @@ export interface BlocksCopy extends Schema.Component {
   };
 }
 
+export interface BlocksCredits extends Schema.Component {
+  collectionName: 'components_blocks_credits';
+  info: {
+    displayName: 'credits';
+    icon: 'alien';
+  };
+  attributes: {
+    author: Attribute.String;
+  };
+}
+
 export interface BlocksHeroImage extends Schema.Component {
   collectionName: 'components_blocks_hero_images';
   info: {
@@ -91,6 +102,7 @@ export interface DynamicMediaMedia extends Schema.Component {
     title: Attribute.String;
     name: Attribute.String;
     caption: Attribute.String;
+    ratio: Attribute.Enumeration<['a. 5:4', 'b. 4:5', 'c. 1:1']>;
   };
 }
 
@@ -135,6 +147,7 @@ export interface HeroHeroSingle extends Schema.Component {
   attributes: {
     image: Attribute.String &
       Attribute.CustomField<'plugin::cn-image-preview.image-preview'>;
+    altText: Attribute.String;
   };
 }
 
@@ -236,6 +249,7 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'blocks.copy': BlocksCopy;
+      'blocks.credits': BlocksCredits;
       'blocks.hero-image': BlocksHeroImage;
       'blocks.product-grid': BlocksProductGrid;
       'blocks.quote': BlocksQuote;

@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_blocks_credits",
+  "info": {
+    "displayName": "credits",
+    "icon": "alien"
+  },
+  "options": {},
+  "attributes": {
+    "author": {
+      "type": "string"
+    }
+  }
+}

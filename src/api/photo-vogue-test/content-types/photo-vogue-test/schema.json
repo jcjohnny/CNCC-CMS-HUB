@@ -31,6 +31,12 @@
         "dynamic-media.media",
         "dynamic-media.video"
       ]
+    },
+    "authors": {
+      "displayName": "credits",
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.credits"
     }
   }
 }

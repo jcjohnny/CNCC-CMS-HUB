@@ -9,6 +9,9 @@
     "image": {
       "type": "customField",
       "customField": "plugin::cn-image-preview.image-preview"
+    },
+    "altText": {
+      "type": "string"
     }
   }
 }
